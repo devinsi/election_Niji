@@ -10,6 +10,8 @@ import java.util.TreeMap;
 
 public class Election {
 
+	//git add test
+
   public static void main(String args[]) throws InputFileException 
   { 
 	manipulateFile();  	  
@@ -23,7 +25,7 @@ public class Election {
   private static void manipulateFile() throws InputFileException 
   {
 		ArrayList<String> arraylist = new  ArrayList<String>();
-		// Le chemin du fichier d'entrée
+		// Le chemin du fichier d'entrï¿½e
 		String pathInputFile = "file.txt"; 
 		// Le chemin du fichier de sortie
 		String pathOutputFile = "fileOut.txt";
@@ -48,7 +50,7 @@ public class Election {
 			    TreeMap<Integer, String> sentenceIncreasing = ascendingSortingVoices(words);     		  
 			    arraylist = calculateAndAddVotesPercentage(sentenceOnArray, sentenceIncreasing, nbVotes);
 			    
-			    //Ajout des résultat de l'ArrayList dans un ficher
+			    //Ajout des rï¿½sultat de l'ArrayList dans un ficher
 			    try 
 			    {
 			        File outFile = new File(pathOutputFile);
@@ -99,13 +101,13 @@ public class Election {
 
 		  for(int i=0; i<sentenceIncreasing.size(); i++)
 	      {
-	    	  // Récupère la clé
+	    	  // Rï¿½cupï¿½re la clï¿½
 	    	  int key =  (int) sentenceIncreasing.keySet().toArray()[i];
 	    	  
-	    	  // Récupère la valeur
+	    	  // Rï¿½cupï¿½re la valeur
 	    	  String value = sentenceIncreasing.get(key);
 	    	  
-	    	  // Calcul le pourcentage arrondi au centième
+	    	  // Calcul le pourcentage arrondi au centiï¿½me
 	    	  double percentage = Double.valueOf(key)*100/nbVotes;
 	    	  DecimalFormat df = new DecimalFormat("#.##");
 	    	  
@@ -123,7 +125,7 @@ public class Election {
   private static TreeMap<Integer, String> ascendingSortingVoices(String[] words) 
   {
 	  TreeMap<Integer, String> votesPartiesPairs = new TreeMap<>(Collections.reverseOrder());
-	  // on recupère seulement les nombres
+	  // on recupï¿½re seulement les nombres
 	  for (int i=1; i<words.length; i=i+2) 
 	  {
 		  votesPartiesPairs.put(Integer.parseInt(words[i]), (words[i+1])); 
@@ -141,7 +143,7 @@ public class Election {
 	  String strWhithoutSpace = nextLine.replaceAll("\\s", "");
 	  //System.out.println(strWhithoutSpace);
   
-	  //on sépare chaque mots de la chaine lorsqu'une virgule est présente
+	  //on sï¿½pare chaque mots de la chaine lorsqu'une virgule est prï¿½sente
 	  String[] words = strWhithoutSpace.split(",");
 	  
 	  return words;	
@@ -152,7 +154,7 @@ public class Election {
    */ 
   private static void translateCode(String[] wordsCode) 
   {
-	//On récupère seulement les mots 
+	//On rï¿½cupï¿½re seulement les mots 
 	  for (int i=2; i<wordsCode.length; i=i+2) 
 	  {	  
 		  switch (wordsCode[i]) {
@@ -163,13 +165,13 @@ public class Election {
 	    	  wordsCode[i] = "Parti travailliste";
 	          break;
 	      case "LD":
-	    	  wordsCode[i] = "Libéraux-démocrates";
+	    	  wordsCode[i] = "Libï¿½raux-dï¿½mocrates";
 		       break;
 	      case "G":
 	    	  wordsCode[i] = "Parti Vert";
 	          break;
 	      case "Ind.":
-	    	  wordsCode[i] = "Indépendant";
+	    	  wordsCode[i] = "Indï¿½pendant";
 	          break;
 	      case "UKIP":
 	    	  wordsCode[i] = "UKIP";
@@ -194,7 +196,7 @@ public class Election {
   private static int calculateSum(String[] words) 
   {
 	  int sum = 0;
-	  // on recupère seulement les nombres
+	  // on recupï¿½re seulement les nombres
 	  for (int i=1; i<words.length; i=i+2) 
 	  {
 		  //On calcule la somme des voix		  
